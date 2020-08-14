@@ -9,7 +9,7 @@ class DestinationsSchema extends Schema {
       table.increments()
       table.integer('user_id').unsigned().references('id').inTable('users').onDelete('cascade')
       table.integer('subbranch_id').unsigned().references('id').inTable('subbranches').onDelete('cascade')
-      table.integer('maintown_id').unsigned().references('id').inTable('Maintowns').onDelete('cascade')
+      table.integer('maintown_id').unsigned().references('id').inTable('maintowns').onDelete('cascade')
       table.integer('agency_id').unsigned().references('id').inTable('agencies').onDelete('cascade')
       table.string('town',30).notNullable()
       table.string('type',30).notNullable()
