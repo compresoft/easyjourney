@@ -7,10 +7,10 @@ class DestinationsSchema extends Schema {
   up () {
     this.create('destinations', (table) => {
       table.increments()
-      table.integer('user_id').unsigned().references('id').inTable('users')
-      table.integer('subbranch_id').unsigned().references('id').inTable('subbranches')
-      table.integer('maintown_id').unsigned().references('id').inTable('Maintowns')
-      table.integer('agency_id').unsigned().references('id').inTable('agencies')
+      table.integer('user_id').unsigned().references('id').inTable('users').onDelete('cascade')
+      table.integer('subbranch_id').unsigned().references('id').inTable('subbranches').onDelete('cascade')
+      table.integer('maintown_id').unsigned().references('id').inTable('Maintowns').onDelete('cascade')
+      table.integer('agency_id').unsigned().references('id').inTable('agencies').onDelete('cascade')
       table.string('town',30).notNullable()
       table.string('type',30).notNullable()
       table.integer('amount').notNullable()

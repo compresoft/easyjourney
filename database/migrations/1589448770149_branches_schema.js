@@ -7,8 +7,8 @@ class BranchesSchema extends Schema {
   up () {
     this.create('branches', (table) => {
       table.increments()
-      table.integer('maintown_id').unsigned().references('id').inTable('Maintowns')
-      table.integer('agency_id').unsigned().references('id').inTable('agencies')
+      table.integer('maintown_id').unsigned().references('id').inTable('Maintowns').onDelete('cascade')
+      table.integer('agency_id').unsigned().references('id').inTable('agencies').onDelete('cascade')
       table.timestamps()
     })
   }

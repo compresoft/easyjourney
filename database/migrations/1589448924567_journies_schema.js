@@ -7,7 +7,7 @@ class JourniesSchema extends Schema {
   up () {
     this.create('journies', (table) => {
       table.increments()
-      table.integer('agency_id').unsigned().references('id').inTable('agencies')
+      table.integer('agency_id').unsigned().references('id').inTable('agencies').onDelete('cascade')
       table.bigInteger('destination_id').notNullable()
       table.time('time_to_travel').notNullable()
       table.timestamps()

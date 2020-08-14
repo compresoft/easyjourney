@@ -7,8 +7,8 @@ class TicketsSchema extends Schema {
   up () {
     this.create('tickets', (table) => {
       table.increments()
-      table.integer('vichel_allocation_id').unsigned().references('id').inTable('vichels')
-      table.integer('user_id').unsigned().references('id').inTable('users')
+      table.integer('vichel_allocation_id').unsigned().references('id').inTable('vichels').onDelete('cascade')
+      table.integer('user_id').unsigned().references('id').inTable('users').onDelete('cascade')
       table.integer('seat',30).notNullable()
       table.time('time_reserved').notNullable()
       table.date('date_reserved').notNullable()
