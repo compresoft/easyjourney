@@ -145,6 +145,7 @@ class UserController {
 			price_data.subbranch_id=subbranch_from.id
 			price_data.d2=subbranch_to.id
 			price_data.amount=amount
+			price_data.town_from=1
 			price_data.town=subbranch_to.location
 			price_data.type=journey_type
 			await price_data.save()
